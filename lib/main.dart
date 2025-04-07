@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfirst_flutter_project/login_page.dart';
+import 'package:myfirst_flutter_project/pages/home_page.dart';
+import 'package:myfirst_flutter_project/pages/login_page.dart';
+import 'package:myfirst_flutter_project/pages/main_pages.dart';
 import 'package:myfirst_flutter_project/style/app_color.dart';
 
 void main() {
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Urbanist',
         scaffoldBackgroundColor: AppColor.background,
       ),
-      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginPage(),
+        '/home': (context) => HomePage(),
+        '/main': (context) => MainPages(),
+      },
     );
   }
 }
