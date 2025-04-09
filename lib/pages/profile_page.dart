@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myfirst_flutter_project/pages/tool_bar.dart';
 import 'package:myfirst_flutter_project/style/app_text.dart';
 
+enum ProfileMenu { edit, logout }
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -11,14 +13,24 @@ class ProfilePage extends StatelessWidget {
       appBar: ToolBar(
         title: 'profile',
         actions: [
-          PopupMenuButton(
+          PopupMenuButton<ProfileMenu>(
+            onSelected: (value) {
+              switch (value) {
+                case ProfileMenu.edit:
+                  print('edit');
+                  break;
+                case ProfileMenu.logout:
+                  print('logout');
+                  break;
+                default:
+              }
+            },
             itemBuilder: (context) {
               return [
+                PopupMenuItem(child: Text('Edit'), value: ProfileMenu.edit),
                 PopupMenuItem(
-                  child: Row(children: [Icon(Icons.edit), Text('Edit')]),
-                ),
-                PopupMenuItem(
-                  child: Row(children: [Icon(Icons.logout), Text('Log out')]),
+                  child: Text('Log out'),
+                  value: ProfileMenu.logout,
                 ),
               ];
             },
@@ -27,10 +39,13 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(
-            'assets/temp/beryl.chung%40mediamonks.com.jpg',
-            width: 90,
-            height: 90,
+          ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            child: Image.asset(
+              'assets/temp/beryl.chung%40mediamonks.com.jpg',
+              width: 90,
+              height: 90,
+            ),
           ),
           SizedBox(height: 24),
           Text('Esrom Basazinaw', style: AppText.header2),
