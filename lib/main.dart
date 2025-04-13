@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
-import 'package:myfirst_flutter_project/pages/edit_profile_page.dart';
-import 'package:myfirst_flutter_project/pages/home_page.dart';
-import 'package:myfirst_flutter_project/pages/login_page.dart';
-import 'package:myfirst_flutter_project/pages/main_pages.dart';
 import 'package:myfirst_flutter_project/style/app_color.dart';
 
 void main() {

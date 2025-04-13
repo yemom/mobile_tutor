@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirst_flutter_project/component/user_avatar.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
 import 'package:myfirst_flutter_project/pages/tool_bar.dart';
 import 'package:myfirst_flutter_project/style/app_text.dart';
@@ -40,14 +41,7 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            child: Image.asset(
-              'assets/temp/beryl.chung%40mediamonks.com.jpg',
-              width: 90,
-              height: 90,
-            ),
-          ),
+          UserAvatar(size: 90),
           SizedBox(height: 24),
           Text('Esrom Basazinaw', style: AppText.header2),
           SizedBox(height: 12),

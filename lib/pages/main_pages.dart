@@ -38,12 +38,12 @@ class _MainPagesState extends State<MainPages> {
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-              'assets/svg/message.svg',
+              'assets/svg/add.svg',
               color: Colors.black,
               height: 24,
               width: 24,
             ),
-            label: 'Message',
+            label: 'Add Post',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
@@ -52,7 +52,7 @@ class _MainPagesState extends State<MainPages> {
               height: 24,
               width: 24,
             ),
-            label: 'Add Post',
+            label: 'Message',
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(

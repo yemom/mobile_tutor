@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirst_flutter_project/config/app_icon.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
 import 'package:myfirst_flutter_project/config/app_string.dart';
 
@@ -94,11 +95,7 @@ class LoginPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/image/google.png',
-                          width: 22,
-                          height: 22,
-                        ),
+                        Image.asset(AppIcon.google, width: 22, height: 22),
                         SizedBox(width: 10),
                         Text(
                           AppString.loginWithGoogle,
@@ -121,11 +118,7 @@ class LoginPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/image/facebook.png',
-                          width: 22,
-                          height: 22,
-                        ),
+                        Image.asset(AppIcon.facebook, width: 22, height: 22),
                         SizedBox(width: 10),
                         Text(
                           AppString.loginWithFacebook,
