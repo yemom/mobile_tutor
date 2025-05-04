@@ -1,10 +1,18 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:myfirst_flutter_project/config/app_icon.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
 import 'package:myfirst_flutter_project/config/app_string.dart';
+import 'package:http/http.dart' as http;
+import 'package:myfirst_flutter_project/model/user.dart';
+
+const baseUrl = 'http://10.0.2.2:8080';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final loginRoute = '$baseUrl/login';
+  final usernameController = TextEditingController();
+  final passwordController = TextEditingController();
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +41,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 Spacer(),
                 TextField(
+                  controller: usernameController,
                   decoration: InputDecoration(
                     hintText: 'username',
                     border: OutlineInputBorder(
@@ -44,6 +53,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 TextField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                     hintText: 'password',
                     border: OutlineInputBorder(
@@ -67,7 +77,8 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   width: 250,
                   child: ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
+                      final user = await doLogin();
                       Navigator.of(context).pushReplacementNamed(AppRoute.main);
                     },
                     style: ElevatedButton.styleFrom(
@@ -154,5 +165,25 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<User> doLogin() async {
+    final username = usernameController.text;
+    final password = passwordController.text;
+    final body = {'username': username, 'password': password};
+    final response = await http.post(
+      Uri.parse(loginRoute),
+      body: jsonEncode(body),
+    );
+    if (response.statusCode == 200) {
+      print(response.body);
+      final json = jsonDecode(response.body);
+      final user = User.fromJson(json['data']);
+      return user;
+    } else {
+      print(response.body);
+      print('you have error!');
+      throw Exception('Error');
+    }
   }
 }

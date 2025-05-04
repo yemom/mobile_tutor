@@ -22,14 +22,15 @@ class AppIcon {
     String path, {
     double size = 24,
     Color? color,
-    required ColorFilter colorFilter,
+    ColorFilter? colorFilter, // 🔥 Add this line
   }) {
     return SvgPicture.asset(
       path,
       width: size,
       height: size,
       colorFilter:
-          color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
+          colorFilter ??
+          (color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null),
     );
   }
 
