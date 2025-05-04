@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myfirst_flutter_project/component/post_item.dart';
+import 'package:myfirst_flutter_project/config/app_route.dart';
 import 'package:myfirst_flutter_project/pages/tool_bar.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,7 +16,9 @@ class HomePage extends StatelessWidget {
         title: "Esrom's project",
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoute.nearby);
+            },
             icon: SvgPicture.asset(
               'assets/svg/location.svg',
               height: 24,

@@ -1,5 +1,3 @@
-import 'package:myfirst_flutter_project/pages/nearby_page.dart';
-
 class AppString {
   static const profile = 'profile';
   static const helloWelcome = 'Hello Welcome Back';
