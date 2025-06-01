@@ -1,4 +1,10 @@
-# My First Flutter Project
+
+# 👋 Hey there, I'm የ፟-mom (Esrom)
+- 🔭 I’m currently working on Flutter cross-platform apps
+- 🌱 I’m learning Firebase, Clean Architecture, AI
+- 💬 Ask me about Dart, Git, or how to survive merge conflicts 😅
+- 📫 Reach me: [Gmail](mailto:12yemom@gmail.com) | [LinkedIn](https://www.linkedin.com/in/esrom-basazinew-65102a339)
+
 
 ## Project Description
 
