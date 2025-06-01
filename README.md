@@ -6,6 +6,11 @@
 - 📫 Reach me: [Gmail](mailto:12yemom@gmail.com) | [LinkedIn](https://www.linkedin.com/in/esrom-basazinew-65102a339)
 
 
+[![Dart](https://img.shields.io/badge/-Dart-0175C2?logo=dart&logoColor=white)](#)  
+📱 A Flutter mobile tutoring app to help students learn efficiently with clean UI and intuitive interactions.
+
+
+
 ## Project Description
 
 This project is a multi-platform mobile application developed using the **Flutter** framework, targeting deployment on **Android**, **iOS**, **Web**, **Linux**, **macOS**, and **Windows** from a single codebase. The primary objective of this application is to [Elaborate on the main purpose. Based on the structure, it seems to be a social networking, profile management, or community-based app. You could say something like: "serve as a platform for users to connect, share updates, manage their personal profiles, and discover content or users nearby."].
