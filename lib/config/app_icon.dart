@@ -2,27 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppIcon {
-  static const _png = 'assets/image/';
-  static const _svg = 'assets/svg/';
+  // Base asset paths
+  static const String _pngPath = 'assets/image/';
+  static const String _svgPath = 'assets/svg/';
 
-  // PNGs
-  static const facebook = '${_png}facebook.png';
-  static const google = '${_png}google.png';
+  // PNG Icons
+  static const String facebook = '${_pngPath}facebook.png';
+  static const String google = '${_pngPath}google.png';
 
-  // SVGs
-  static const String home = '${_svg}home.svg';
-  static const String favorite = '${_svg}favorite.svg';
-  static const String message = '${_svg}message.svg';
-  static const String user = '${_svg}user.svg';
-  static const String add = '${_svg}add.svg';
-  static const String location = '${_svg}location.svg';
+  // SVG Icons
+  static const String home = '${_svgPath}home.svg';
+  static const String favorite = '${_svgPath}favorite.svg';
+  static const String message = '${_svgPath}message.svg';
+  static const String user = '${_svgPath}user.svg';
+  static const String add = '${_svgPath}add.svg';
+  static const String location = '${_svgPath}location.svg';
 
-  /// SVG Icon Widget
+  /// SVG Icon Widget Helper
   static Widget svg(
     String path, {
     double size = 24,
     Color? color,
-    ColorFilter? colorFilter, // 🔥 Add this line
+    ColorFilter? colorFilter,
   }) {
     return SvgPicture.asset(
       path,
@@ -34,8 +35,12 @@ class AppIcon {
     );
   }
 
-  /// PNG Icon Widget (Optional helper if needed later)
-  static Widget png(String path, {double size = 24}) {
-    return Image.asset(path, width: size, height: size, fit: BoxFit.contain);
+  /// PNG Icon Widget Helper
+  static Widget png(
+    String path, {
+    double size = 24,
+    BoxFit fit = BoxFit.contain,
+  }) {
+    return Image.asset(path, width: size, height: size, fit: fit);
   }
 }

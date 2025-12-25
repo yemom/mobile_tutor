@@ -3,7 +3,9 @@ import 'package:myfirst_flutter_project/component/user_avatar.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
 import 'package:myfirst_flutter_project/config/app_string.dart';
 import 'package:myfirst_flutter_project/pages/tool_bar.dart';
+import 'package:myfirst_flutter_project/provider/app_repo.dart';
 import 'package:myfirst_flutter_project/style/app_text.dart';
+import 'package:provider/provider.dart';
 
 enum ProfileMenu { edit, logout }
 
@@ -12,6 +14,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = context.read<AppRepo>().user;
     return Scaffold(
       appBar: ToolBar(
         title: 'profile',

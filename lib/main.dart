@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myfirst_flutter_project/config/app_route.dart';
+import 'package:myfirst_flutter_project/provider/app_repo.dart';
 import 'package:myfirst_flutter_project/style/app_color.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider<AppRepo>(
+    create: (context) => AppRepo(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,8 +16,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Urbanist',
         scaffoldBackgroundColor: AppColor.background,
